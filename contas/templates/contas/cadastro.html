@@ -1,0 +1,18 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+    <form method="post"><!-- Esta linha inicia um formulário HTML com o método POST. Isso significa que, ao enviar o formulário, os dados serão enviados para o servidor no corpo da requisição. O método POST é comumente usado para enviar dados que modificam o estado do servidor, como criar ou atualizar registros. -->
+        {% csrf_token %}<!--Esta linha é uma tag do Django que gera um token de proteção contra ataques CSRF (Cross-Site Request Forgery). O token é necessário em formulários que fazem requisições POST para garantir que a requisição foi realmente feita pelo usuário e não por um atacante. Sem este token, o Django rejeitará a requisição por razões de segurança-->
+        {{ form.as_p }}<!--Esta linha renderiza o objeto do formulário (que foi passado para o template na view) em um formato HTML. O método as_p formata os campos do formulário como parágrafos (<p>), o que facilita a leitura e a estruturação do layout. Cada campo do formulário será exibido com suas respectivas mensagens de erro, se houver.-->
+        <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+</body>
