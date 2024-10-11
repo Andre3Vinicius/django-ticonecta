@@ -1,3 +1,4 @@
+<!-- template/login.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,6 +18,7 @@
         <br>
         <button type="submit">Entrar</button>
     </form>
-    <a href="{% url 'recuperar_senha' %}">Esqueci minha senha</a>
+    <p><a href="{% url 'recuperar_senha' %}">Esqueceu sua senha?</a></p>
+    <p>Ainda não tem uma conta? <a href="{% url 'cadastro' %}">Cadastre-se aqui</a>.</p>
 </body>
 </html>

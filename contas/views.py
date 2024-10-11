@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-
+from django.shortcuts import render, redirect
 
 
 def cadastro(request):
-    if request.method == 'POST':#Essa linha checa se a requisição recebida é do tipo POST, o que significa que o formulário foi enviado.
-        form = UserCreationForm(request.POST)#Aqui, um formulário (UserCreationForm) é instanciado com os dados enviados no POST. O UserCreationForm é um formulário padrão do Django para criação de usuários.
-        if form.is_valid():#Esta linha verifica se os dados do formulário são válidos (se, por exemplo, todos os campos obrigatórios foram preenchidos corretamente).
-            form.save()#Se o formulário for válido, o método save() é chamado, o que cria um novo usuário no banco de dados.
+        if request.method == 'POST':#Essa linha checa se a requisição recebida é do tipo POST, o que significa que o formulário foi enviado.
+            form = UserCreationForm(request.POST)#Aqui, um formulário (UserCreationForm) é instanciado com os dados enviados no POST. O UserCreationForm é um formulário padrão do Django para criação de usuários.
+            if form.is_valid():#Esta linha verifica se os dados do formulário são válidos (se, por exemplo, todos os campos obrigatórios foram preenchidos corretamente).
+                form.save()#Se o formulário for válido, o método save() é chamado, o que cria um novo usuário no banco de dados.
             messages.success(request, 'Cadastro realizado com sucesso!')#Após o cadastro, uma mensagem de sucesso é adicionada à fila de mensagens do Django, informando que o cadastro foi realizado com sucesso.
             return redirect('login')#O usuário é redirecionado para a página de login após o cadastro bem-sucedido.
         else:
@@ -30,5 +30,9 @@ def login_view(request):
 
 
 def recuperar_senha(request):
-    # Implementar lógica de recuperação de senha
-    return render(request, 'contas/recuperar_senha.html')
+    return redirect('recuperar_senha')
+
+def logout_view(request):
+    logout(request)  # Realiza o logout do usuário
+    messages.success(request, 'Você foi desconectado com sucesso.')  # Mensagem de sucesso
+    return redirect('login')  # Redireciona para a página de login
