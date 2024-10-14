@@ -1,16 +1,36 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Cadastro</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- Renderiza o formulário -->
-        <button type="submit">Cadastrar</button>
-    </form>
-    <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+    <div class="form-container">
+        <h1>Cadastro</h1>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Usuário:</label>
+            <input type="text" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" name="password" required>
+            
+            <label for="password_confirm">Confirme a Senha:</label>
+            <input type="password" name="password_confirm" required>
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+    </div>
 </body>
 </html>
