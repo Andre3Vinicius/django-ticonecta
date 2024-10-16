@@ -34,6 +34,11 @@ def login_view(request):
 
     return render(request, 'contas/login.html')
 
+
+def home_view(request):
+    return render(request, 'contas/home.html')
+    
+
 def logout_view(request):
     logout(request)
     messages.success(request, 'Você foi desconectado com sucesso.')
