@@ -44,5 +44,14 @@ def logout_view(request):
     messages.success(request, 'Você foi desconectado com sucesso.')
     return redirect('login')
 
-def recuperar_senha(request):
+def recuperar_senha():
     return redirect('recuperar_senha')
+
+def lojas_view(request):
+    return render(request, 'contas/lojas.html')
+
+def chats_view(request):
+    return render(request, 'contas/chats.html')
+
+def descubra_view(request):
+    return render(request, 'contas/descubra.html')
