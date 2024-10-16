@@ -10,5 +10,9 @@ urlpatterns = [
     path('lojas/',views.lojas_view, name='lojas'),
     path('chats', views.chats_view, name='chats'),
     path('descubra/', views.descubra_view, name='descubra'),
-    
+    path('home/ticomunica/', views.ticomunica_view, name='ticomunica'),
+    path('ticomunica/desenvolvedores/', views.desenvolvedores_view, name='desenvolvedores'),
+    path('ticomunica/designers/', views.designers_view, name='designers'),
+    path('ticomunica/analista_dados/', views.analista_dados_view, name ='analista_dados'),
+    path('ticomunica/qas/', views.qas_view, name='qas')
 ]

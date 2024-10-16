@@ -4,8 +4,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chats</title>
-    <link rel="stylesheet" href="{% static 'css/chats.css' %}">
+    <title>TI Comunica</title>
+    <link rel="stylesheet" href="{% static 'css/ticomunica.css' %}">
 </head>
 <body>
     <nav class="navbar">
@@ -19,8 +19,14 @@
     </nav>
 
     <div class="container">
-        <h1>Chats</h1>
-        <p>Converse com outras pessoas e faça novas amizades.</p>
+        <h1>TI Comunica</h1>
+        <p>Selecione uma das áreas abaixo:</p>
+        <div class="links-container">
+            <a href="{% url 'desenvolvedores' %}" class="link-item">Desenvolvedores</a>
+            <a href="{% url 'designers' %}" class="link-item">Designers</a>
+            <a href="{% url 'analista_dados' %}" class="link-item">Analistas de Dados</a>
+            <a href="{% url 'qas' %}" class="link-item">QAs</a>
+        </div>
     </div>
 </body>
 </html>

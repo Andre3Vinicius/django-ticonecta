@@ -55,3 +55,19 @@ def chats_view(request):
 
 def descubra_view(request):
     return render(request, 'contas/descubra.html')
+
+def ticomunica_view(request):
+    return render(request, 'contas/ticomunica.html')
+
+
+def desenvolvedores_view(request):
+    return render(request, 'contas/desenvolvedores.html')
+
+def designers_view(request):
+    return render(request, 'contas/designers.html')
+
+def analista_dados_view(request):
+    return render(request, 'contas/analista_dados.html')
+
+def qas_view(request):
+    return render(request, 'contas/qas.html')

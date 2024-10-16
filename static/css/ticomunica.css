@@ -45,50 +45,14 @@ body {
     text-align: center;
 }
 
-.carousel {
-    position: relative;
-    margin: 20px auto;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-item {
-    display: none;
-    text-align: center;
-}
-
-.carousel-item.active {
-    display: block;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
-.ti-comunica {
+.links-container {
     margin-top: 20px;
 }
 
-.ti-comunica-link {
+.link-item {
     display: inline-block;
-    padding: 10px 20px;
+    margin: 10px 20px;
+    padding: 15px 30px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
@@ -96,6 +60,6 @@ body {
     transition: background-color 0.3s;
 }
 
-.ti-comunica-link:hover {
+.link-item:hover {
     background-color: #0056b3;
 }
