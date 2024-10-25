@@ -8,29 +8,37 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="form-container">
-        <h1>Cadastro</h1>
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        <form method="post">
-            {% csrf_token %}
-            <label for="username">Usuário:</label>
-            <input type="text" name="username" required>
-            
-            <label for="password">Senha:</label>
-            <input type="password" name="password" required>
-            
-            <label for="password_confirm">Confirme a Senha:</label>
-            <input type="password" name="password_confirm" required>
-            
-            <button type="submit">Cadastrar</button>
-        </form>
-        <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+    <div class="main-container">
+        <div class="info-section">
+            <!-- Pode adicionar qualquer imagem ou conteúdo específico aqui -->
+        </div>
+        <div class="form-section">
+            <h2 class="theme-message">CONECTANDO IDEIAS E INOVAÇÕES</h2>
+            <h1>Cadastro</h1>
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="username">Usuário:</label>
+                <input type="text" name="username" required placeholder="Digite seu usuário">
+                
+                <label for="password">Senha:</label>
+                <input type="password" name="password" required placeholder="Digite sua senha">
+                
+                <label for="password_confirm">Confirme a Senha:</label>
+                <input type="password" name="password_confirm" required placeholder="Confirme sua senha">
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+            <div class="additional-links">
+                <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login aqui</a>.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

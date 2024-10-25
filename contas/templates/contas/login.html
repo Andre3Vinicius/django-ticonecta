@@ -8,27 +8,40 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="form-container">
-        <h1>Login</h1>
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        <form method="post">
-            {% csrf_token %}
-            <label for="username">Usuário:</label>
-            <input type="text" name="username" required>
-            
-            <label for="password">Senha:</label>
-            <input type="password" name="password" required>
-            
-            <button type="submit">Entrar</button>
-        </form>
-        <p><a href="{% url 'recuperar_senha' %}">Esqueceu sua senha?</a></p>
+    <div class="main-container">
+        <div class="info-section">
+          <!--  <h2>Sistema NwayPro</h2>
+            <p>
+                Nway Pro é um software de controle de acesso disponível para as melhores e principais integradoras do mercado. No rol de funcionalidades, cabe citar a biometria, reconhecimento facial, leitura de QR Code, entre outros. Há também um módulo específico para o pré-cadastro e para os totens de atendimento.
+            </p>
+            <a href="#">Leia mais »</a>-->
+        
+        </div>
+       <div class="form-section">
+    <h2 class="theme-message">CONECTANDO IDEIAS E INOVAÇÕES</h2>
+    <h1>Entrar</h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">LOGIN *</label>
+        <input type="text" name="username" required placeholder="Digite seu usuário">
+        
+        <label for="password">SENHA *</label>
+        <input type="password" name="password" required placeholder="Digite sua senha">
+        
+        <p>* Campos obrigatórios</p>
+        <button type="submit">Login</button>
+    </form>
+    <div class="additional-links">
+        <a href="{% url 'recuperar_senha' %}">Esqueceu sua senha?</a>
         <p>Ainda não tem uma conta? <a href="{% url 'cadastro' %}">Cadastre-se aqui</a>.</p>
     </div>
+</div>
 </body>
 </html>
