@@ -9,6 +9,7 @@
 </head>
 <body>
     <nav class="navbar">
+        <h1>CONECTANDO SONHOS E INOVAÇÕES</h1>
         <div class="navbar-container">
             <a href="{% url 'lojas' %}" class="nav-item">Lojas</a>
             <a href="{% url 'chats' %}" class="nav-item">Chats</a>
@@ -16,187 +17,235 @@
         </div>
     </nav>
 <!--NOTICIAS-->
-    <div class="movies-section"> 
-        <h2>NOTICIAS</h2>
-        <div class="movie-carousel">
+<div class="movies-section"> 
+    <h2>O que está em alta: Notícias Imperdíveis!</h2>
+    <div class="movie-carousel">
 
-            <div class="movie-card">
-                <img src="{% static 'img/noticia1.jpg' %}" alt="Capa filme A teia">
-                <div class="movie-info">
-                    <p>Hipervigilância ou segurança?</p>
-                    <p>Conheça as 'muralhas digitais' que estão sendo adotadas no Brasil todo</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('A teia', '14.95', 'filmes_acao/ateia.jpg')">Ir para noticia</button>
-                </div>
+        <!-- Notícia 1 -->
+        <div class="movie-card">
+            <img src="{% static 'img/noticia1.jpg' %}">
+            <div class="movie-info">
+                <p>Conheça as 'muralhas digitais' que estão sendo adotadas no Brasil todo</p>
+                <button class="btn-saiba-mais" onclick="window.location.href='https://www.tecmundo.com.br/produto/290500-software-drones-ia-revolucionar-missoes-busca-resgate.htm'">
+                    SAIBA MAIS
+                </button>
             </div>
-
-            <div class="movie-card">
-                <img src="{% static 'img/noticia2.jpg' %}" alt="Capa filme infiltrado">
-                <div class="movie-info">
-                    <p>Drones inteligentes</p>
-                    <p>Software para drones com IA pode revolucionar missões de busca e resgate</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('Infiltrado', '14.95', 'filmes_acao/infiltrado.jpg')">Ir para noticia</button>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="{% static 'img/noticia3.jpg' %}" alt="Capa filme zona_de_risco">
-                <div class="movie-info">
-                    <p>Erros da IA?</p>
-                    <p>ChatGPT pode discriminar pessoas dependendo do nome, diz estudo da OpenAI</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho()">Ir para noticia</button>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_acao/rambo_ate_o_fim.jpg" alt="Capa filme ate o fim">
-                <div class="movie-info">
-                    <p>Ate o fim</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho()">Ir para noticia</button>
-                </div>  
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_acao/implacavel.jpg" alt="Capa filme zona_de_risco">
-                <div class="movie-info">
-                    <p>Zona de risco</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('Zona de risco', '14.95', 'filmes_acao/zona_de_risco.jpg')">Ir para noticia</button>
-                </div>       
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_acao/007.png" alt="Capa filme 007">
-                <div class="movie-info">
-                    <p>007</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('007', '14.95', 'filmes_acao/007.png')">Ir para noticia</button>
-                </div>       
-            </div>
-
         </div>
+
+        <!-- Notícia 2 -->
+        <div class="movie-card">
+            <img src="https://tm.ibxk.com.br/2024/10/08/08120129056170.jpeg?ims=1280x480">
+            <div class="movie-info">
+                <p>Software para drones com IA pode revolucionar missões de busca e resgate</p>
+                <button class="btn-saiba-mais"  onclick="window.location.href='https://www.tecmundo.com.br/produto/290500-software-drones-ia-revolucionar-missoes-busca-resgate.htm'">
+                    SAIBA MAIS
+                </button>
+            </div>
+        </div>
+
+        <!-- Notícia 3 -->
+        <div class="movie-card">
+            <img src="https://tm.ibxk.com.br/2024/10/16/16124654616121.jpeg?ims=1280x480">
+            <div class="movie-info">
+                <p>ChatGPT pode discriminar pessoas dependendo do nome, diz estudo da OpenAI</p>
+                <button class="btn-saiba-mais" onclick="window.location.href='https://www.tecmundo.com.br/software/293844-chatgpt-discriminar-pessoas-dependendo-nome-diz-estudo-openai.htm'">
+                    SAIBA MAIS
+                </button>
+            </div>
+        </div>
+
+        <!-- Notícia 4 -->
+        <div class="movie-card">
+            <img src="https://tm.ibxk.com.br/2024/10/21/21092112370020.jpeg?ims=1280x480">
+            <div class="movie-info">
+                <p>IA da Meta no WhatsApp terá 'memória' para se lembrar de chats com você</p>
+                <button class="btn-saiba-mais" onclick="window.location.href='https://www.tecmundo.com.br/software/294030-ia-meta-whatsapp-tera-memoria-lembrar-chats-voce.htm'">
+                    SAIBA MAIS
+                </button>
+            </div>
+        </div>
+
+        <!-- Notícia 5 -->
+        <div class="movie-card">
+            <img src="https://tm.ibxk.com.br/2024/10/17/17223238217005.jpg?ims=1280x480">
+            <div class="movie-info">
+                <p>ChatGPT agora tem app próprio para PC</p>
+            
+                <button class="btn-saiba-mais" onclick="window.location.href='https://www.tecmundo.com.br/software/293937-chatgpt-tem-app-proprio-pc.htm'">
+                    SAIBA MAIS
+                </button>
+            </div>
+        </div>
+
+         <!-- Notícia 6 -->
+         <div class="movie-card">
+            <img src="https://tm.ibxk.com.br/2024/10/28/28131709601200.jpeg?ims=1280x480">
+            <div class="movie-info">
+                <p>Título da sexta Notícia</p>
+                <p>Descrição da Quinta Notícia</p>
+                <button class="btn-saiba-mais" onclick="window.location.href='https://tm.ibxk.com.br/2024/10/28/28131709601200.jpeg?ims=1280x480'">
+                    SAIBA MAIS
+                </button>
+            </div>
+        </div>
+
     </div>
+</div>
 <!--NOTICIAS-->
     <!--CURSOS-->
     <div class="movies-section"> 
-        <h2>CURSOS</h2>
-        <div class="movie-carousel">
-
-            <div class="movie-card">
-                <img src="./filmes_comedia/apaixonada.jpg" alt="Capa filme apaixonada">
-                <div class="movie-info">
-                    <p>Apaixonada</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('Apaixonada', '14.95', 'filmes_comedia/apaixonada.jpg')">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_comedia/bem_casados.jpg" alt="Capa filme bem_casados">
-                <div class="movie-info">
-                    <p>Bem casados</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('Bem casados', '14.95', 'filmes_comedia/bem_casados.jpg')">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_comedia/o_porteiro.jpg" alt="Capa filme o_porteiro">
-                <div class="movie-info">
-                    <p>O porteiro</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('O porteiro', '14.95', 'filmes_comedia/o_porteiro.jpg')">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_comedia/juntos_e_enrolados.jpg" alt="Capa filme juntos_e_enrolados">
-                <div class="movie-info">
-                    <p>Juntos e enrolados</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('Juntos e enrolados', '14.95', 'filmes_comedia/juntos_e_enrolados.jpg')">Adicionar ao Carrinho</button>
-                </div>  
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_comedia/o_amor_nao_tem_tamanho.jpg" alt="Capa filme o_amor_nao_tem_tamanho">
-                <div class="movie-info">
-                    <p>O amor não tem tamanho</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('O amor não tem tamanho', '14.95', 'filmes_comedia/o_amor_nao_tem_tamanho.jpg')">Adicionar ao Carrinho</button>
-                </div>  
-            </div>
-
-            <div class="movie-card">
-                <img src="./filmes_comedia/chocante.jpg" alt="Capa filme chocante">
-                <div class="movie-info">
-                    <p>Chocante</p>
-                    <p>R$14,95</p>
-                    <button id="btn2" onclick="adicionarAoCarrinho('Chocante', '14.95', 'filmes_comedia/chocante.jpg')">Adicionar ao Carrinho</button>
-                </div>  
-            </div>
-
-        </div>
-    </div>
-<!--CURSOS-->
-       
- <!--BOOTCAMPS-->
- <div class="movies-section"> 
-    <h2>BOOTCAMPS</h2>
+        <h2>Cursos Incríveis: Descubra sua próxima jornada!</h2>
         <div class="movie-carousel">
     
-        <div class="movie-card">
-            <img src="filmes/drama1.png" alt="Capa filme Carol">
-            <div class="movie-info">
-                <p>Carol (2015)</p>
-                <p>R$14,95</p>
-                <button id="btn1" onclick="adicionarAoCarrinho('Carol (2015)', '14.95', 'filmes/drama1.png')">Adicionar ao Carrinho</button>
+            <!-- Curso 1 -->
+            <div class="movie-card">
+                <img src="https://img-c.udemycdn.com/course/100x100/2026618_7f90.jpg" alt="Python & MySQL">
+                <div class="movie-info">
+                    <p>Python & MySQL</p>
+                    <button class="btn-saiba-mais" onclick="window.location.href='https://www.udemy.com/course/python-mysql/'">
+                        SAIBA MAIS
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="movie-card">
-            <img src="filmes/drama2.png" alt="Capa filem Olga">
-            <div class="movie-info">
-                <p>Olga (2004)</p>
-                <p>R$14,95</p>
-                <button id="btn2" onclick="adicionarAoCarrinho('Olga (2004)', '14.95', 'filmes/drama2.png')">Adicionar ao Carrinho</button>
+    
+            <!-- Curso 2 -->
+            <div class="movie-card">
+                <img src="https://img-c.udemycdn.com/course/100x100/1701388_0134.jpg">
+                <div class="movie-info">
+                    <p>Java COMPLETO Programação Orientada a Objetos + Projetos</p>
+                    <button class="btn-saiba-mais" onclick="window.location.href='https://www.udemy.com/course/java-curso-completo/?kw=programa%C3%A7%C3%A3o&src=sac&couponCode=KEEPLEARNING'">
+                        SAIBA MAIS
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="movie-card">
-            <img src="filmes/drama3.jpg" alt="Capa filme As Vantagens de Ser Invisível">
-            <div class="movie-info">
-                <p>As Vantagens de Ser Invisível</p>
-                <p>R$14,95</p>
-                <button id="btn3" onclick="adicionarAoCarrinho('As Vantagens de Ser Invisível (2012)', '14.95', 'filmes/drama3.jpg')">Adicionar ao Carrinho</button>
+    
+            <!-- Curso 3 -->
+            <div class="movie-card">
+                <img src="https://img-c.udemycdn.com/course/100x100/1121284_9b2f_3.jpg">
+                <div class="movie-info">
+                    <p>C# COMPLETO Programação Orientada a Objetos + Projetos</p>
+                    <button class="btn-saiba-mais" onclick="window.location.href='https://www.udemy.com/course/programacao-orientada-a-objetos-csharp/'">
+                        SAIBA MAIS
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="movie-card">
-            <img src="filmes/drama3.jpg" alt="Capa filme As Vantagens de Ser Invisível">
-            <div class="movie-info">
-                <p>As Vantagens de Ser Invisível</p>
-                <p>R$14,95</p>
-                <button id="btn3" onclick="adicionarAoCarrinho('As Vantagens de Ser Invisível (2012)', '14.95', 'filmes/drama3.jpg')">Adicionar ao Carrinho</button>
+    
+            <!-- Curso 4 -->
+            <div class="movie-card">
+                <img src="https://img-c.udemycdn.com/course/100x100/4632130_28fc_3.jpg">
+                <div class="movie-info">
+                    <p>Curso MySQL Completo - 123 horas, formação DBA</p>
+                    <button class="btn-saiba-mais" onclick="window.location.href='https://www.udemy.com/course/mysqlcompleto/'">
+                        SAIBA MAIS
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="movie-card">
-            <img src="filmes/drama3.jpg" alt="Capa filme As Vantagens de Ser Invisível">
-            <div class="movie-info">
-                <p>As Vantagens de Ser Invisível</p>
-                <p>R$14,95</p>
-                <button id="btn3" onclick="adicionarAoCarrinho('As Vantagens de Ser Invisível (2012)', '14.95', 'filmes/drama3.jpg')">Adicionar ao Carrinho</button>
+                <!-- Curso 5 -->
+            <div class="movie-card">
+                <img src="https://img-c.udemycdn.com/course/100x100/1156834_a850_17.jpg">
+                <div class="movie-info">
+                    <p>Cloud Computing - AWS, Google Cloud e Azure - Dados na nuvem</p>
+                    <button class="btn-saiba-mais" onclick="window.location.href='https://www.udemy.com/course/cloud-computing-aws-google-cloud-azure/'">
+                        SAIBA MAIS
+                    </button>
+                </div>
             </div>
-        </div> 
-        <div class="movie-card">
-            <img src="filmes/drama3.jpg" alt="Capa filme As Vantagens de Ser Invisível">
-            <div class="movie-info">
-                <p>As Vantagens de Ser Invisível</p>
-                <p>R$14,95</p>
-                <button id="btn3" onclick="adicionarAoCarrinho('As Vantagens de Ser Invisível (2012)', '14.95', 'filmes/drama3.jpg')">Adicionar ao Carrinho</button>
-            </div>
-        </div>     
-         <!--BOOTCAMPS-->
-    </div>
-</div>
 
+            <!-- Curso 6 -->
+
+            <div class="movie-card">
+                <img src="https://img-c.udemycdn.com/course/100x100/5310926_11a4.jpg">
+                <div class="movie-info">
+                    <p>JavaScript : Do Zero ao Avançado</p>
+                    <button class="btn-saiba-mais" onclick="window.location.href='https://www.udemy.com/course/javascript-2024/?couponCode=BFCPSALE24'">
+                        SAIBA MAIS
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- CURSOS -->
+    
+    <!-- BOOTCAMPS -->
+    <div class="movies-section"> 
+        <h2>"Bootcamps Imersivos: Prepare-se para o Mercado!"</h2>
+        <div class="movie-carousel">
+    
+            <!-- Bootcamp 1 -->
+            <div class="movie-card">
+                <img src="https://assets.dio.me/FEelpQZKibOGxCzUO4r33fut3b5nvbZs15fYK2UsSXU/f:webp/h:120/q:80/L3RyYWNrcy9hZjIyZDRhMC00NjNmLTQ4YzUtYTcwYy00OTYxZDVlNjE4ZDAucG5n" alt="BOOTCAMP">
+                <div class="movie-info">
+                    <p>Bootcamp Cloud AWS</p>
+                    
+                    <a href="https://web.dio.me/track/bootcamp-cloud-aws?page=1&search=&tab=about" target="_blank">
+                        <button class="btn-saiba-mais">SAIBA MAIS</button>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Bootcamp 2 -->
+            <div class="movie-card">
+                <img src="https://assets.dio.me/oflcIYKtgNU2kkjIporXiXNsfvSyz_E9zmUsMPdyVJg/f:webp/h:120/q:80/L3RyYWNrcy8zNDJmNzM5Mi1hOGI1LTQyMWYtYmVhOS1kMjlmMWZkOGFhZTkucG5n" alt="BOOTCAMP">
+                <div class="movie-info">
+                    <p>Geração Tech Unimed-BH - Ciência de Dados</p>
+                    
+                    <a href="https://web.dio.me/track/geracao-tech-unimed-bh-ciencia-de-dados" target="_blank">
+                        <button class="btn-saiba-mais"">SAIBA MAIS</button>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Bootcamp 3 -->
+            <div class="movie-card">
+                <img src="https://assets.dio.me/31Tic7SURWbaWL-qVZdJPM2QSpyzugWCX-Z1_-jUSR8/f:webp/h:120/q:80/L3RyYWNrcy85NjMxODk4ZS1hODNjLTRjMDQtYWVmZC1hNzgyZWFkMmRiOGYucG5n" alt="BOOTCAMP">
+                <div class="movie-info">
+                    <p>Santander Bootcamp 2023 - Backend Java</p>
+                    
+                    <a href="https://web.dio.me/track/santander-bootcamp-2023-backend-java" target="_blank">
+                        <button class="btn-saiba-mais">SAIBA MAIS</button>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Bootcamp 4 -->
+            <div class="movie-card">
+                <img src="https://assets.dio.me/u-N8vJK4RmVIDGF1WKQ_O1Pg-uJ1SjkodMm2Npo9mxs/f:webp/h:120/q:80/L3RyYWNrcy84M2Y4MTUwYS02NDI5LTRjMWEtOTIwNy1kNWJmZjYxMGY2NDcucG5n" alt="BOOTCAMP">
+                <div class="movie-info">
+                    <p>Potência Tech iFood - Desenvolvimento de Jogos</p>
+                    
+                    <a href="https://web.dio.me/track/potencia-tech-ifood-desenvolvimento-de-jogos" target="_blank">
+                        <button class="btn-saiba-mais">SAIBA MAIS</button>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Bootcamp 5 -->
+            <div class="movie-card">
+                <img src="https://assets.dio.me/EJLsYWy0BxMQ9P9CuvkRDaU_FGJdKmTuP6Ojx701ByE/f:webp/h:120/q:80/L3RyYWNrcy80ZDk5OGQ1Yy0zNmMxLTQ5N2ItOGRhMC04ZGI0NjVjODIwZWIucG5n" alt="BOOTCAMP">
+                <div class="movie-info">
+                    <p>Microsoft Azure AI Fundamentals</p>
+                   
+                    <a href="https://web.dio.me/track/microsoft-azure-ai-fundamentals" target="_blank">
+                        <button class="btn-saiba-mais">SAIBA MAIS</button>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Bootcamp 6 -->
+            <div class="movie-card">
+                <img src="https://assets.dio.me/x84deVbyyXPy2Qv6Ug4uuQnB0tRIBOyfiPJQe9jKNrc/f:webp/h:120/q:80/L3RyYWNrcy84MDUyZGIxYi1mNDM0LTQ5ODAtOGJiYi05ZjdkYWE3MjViOGQucG5n" alt="BOOTCAMP">
+                <div class="movie-info">
+                    <p>Ri Happy - Front-end do Zero</p>
+                    
+                    <a href="https://web.dio.me/track/coding-future-front-end-do-zero" target="_blank">
+                        <button class="btn-saiba-mais">SAIBA MAIS</button>
+                    </a>
+                </div>
+            </div> 
+    
+        </div>
+    </div>
 
 
 

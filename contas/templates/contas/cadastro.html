@@ -24,15 +24,18 @@
             {% endif %}
             <form method="post">
                 {% csrf_token %}
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" required placeholder="Digite seu e-mail">
+            
                 <label for="username">Usuário:</label>
                 <input type="text" name="username" required placeholder="Digite seu usuário">
-                
+            
                 <label for="password">Senha:</label>
                 <input type="password" name="password" required placeholder="Digite sua senha">
-                
+            
                 <label for="password_confirm">Confirme a Senha:</label>
                 <input type="password" name="password_confirm" required placeholder="Confirme sua senha">
-                
+            
                 <button type="submit">Cadastrar</button>
             </form>
             <div class="additional-links">

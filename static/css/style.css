@@ -22,7 +22,7 @@ body {
 .info-section {
     background: url('/static/img/logo.jpg') no-repeat center center;
     background-size: cover;
-    color: rgb(255, 255, 255);
+    color: rgb(253, 253, 253);
     padding: 40px;
     width: 50%;
     display: flex;
@@ -48,7 +48,7 @@ body {
 }
 
 .info-section a {
-    color: white;
+    color: #070707; /* Verde limão */
     text-decoration: underline;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .form-section button {
-    background-color: #1e6f66; /* Botão levemente mais escuro */
+    background-color: #32CD32; /* Verde limão */
     color: white;
     padding: 10px;
     border: none;
@@ -92,7 +92,7 @@ body {
 }
 
 .form-section button:hover {
-    background-color: #175b55; /* Cor do botão ao passar o mouse */
+    background-color: #28a328; /* Verde mais escuro */
 }
 
 .additional-links {
@@ -101,7 +101,7 @@ body {
 }
 
 .additional-links a {
-    color: #26a69a;
+    color: #32CD32; /* Verde limão */
     text-decoration: none;
     font-size: 14px;
 }
@@ -114,7 +114,7 @@ body {
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    color: #26a69a; /* Mesma cor do botão para harmonizar */
+    color: #32CD32; /* Verde limão */
     margin-bottom: 20px;
 }
 
