@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7; /* Fundo mais neutro para a página */
+    background-color: #000000; /* Fundo mais neutro para a página */
     margin: 0;
     padding: 0;
 }
@@ -85,7 +85,7 @@ h1 {
 }
 
 p {
-    color: #333; /* Texto mais escuro para contraste */
+    color: #fdfdfd; /* Texto mais escuro para contraste */
 }
 
 .product-list {
