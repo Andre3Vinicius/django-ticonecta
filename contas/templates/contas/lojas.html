@@ -7,90 +7,176 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/lojas.css' %}">
 </head>
+
 <body>
+    <!-- Página do Carrinho -->
+    <div id="cart-page" class="cart-page">
+        <button onclick="closeCartPage()" class="close-button">Fechar</button>
+        <h2>Seu Carrinho</h2>
+        <ul id="cart-items-list"></ul>
+        <span id="total-value">Total: R$ 0,00</span>
+        <button onclick="enviarParaWhatsApp()" class="buy-button">Comprar via WhatsApp</button>
+    </div>
+    
+    <!-- Barra de Navegação -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="{% url 'home' %}" class='nav-item'>Home</a>
+            <a href="{% url 'home' %}" class="nav-item">Home</a>
             <a href="{% url 'chats' %}" class="nav-item">Chats</a>
             <a href="{% url 'logout' %}" class="nav-item logout">Logout</a>
+            <div class="cart-icon" id="cart-icon">
+                <!-- Ícone de carrinho que abre a página do carrinho -->
+                <h2 onclick="openCartPage()">🛒</h2>
+            </div>
         </div>
     </nav>
-
+    
     <div class="container">
         <h1>Loja de Tecnologia</h1>
         <p>Encontre as melhores ofertas.</p>
-
+    
         <div class="product-list">
             <!-- Produtos -->
             <div class="product-card">
                 <img src="{% static 'img/SmartphoneXYZ.png' %}" alt="Smartphone XYZ" class="product-image">
                 <h2 class="product-title">Smartphone XYZ</h2>
                 <p class="product-price">R$ 1.999,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Smartphone XYZ', 1999.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Notebook.webp' %}" alt="Notebook Samsung" class="product-image">
                 <h2 class="product-title">Notebook Samsung galaxy book</h2>
                 <p class="product-price">R$ 3.499,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Notebook Samsung galaxy book', 3499.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Fone.webp' %}" alt="Fones de Ouvido Wireless" class="product-image">
                 <h2 class="product-title">Fones de Ouvido Wireless</h2>
                 <p class="product-price">R$ 399,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Fones de Ouvido Wireless', 399.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Smartwatch.webp' %}" alt="Smartwatch 2024" class="product-image">
                 <h2 class="product-title">Smartwatch 2024</h2>
                 <p class="product-price">R$ 799,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Smartwatch 2024', 799.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Tablet.jpg' %}" alt="Tablet Pro 11" class="product-image">
                 <h2 class="product-title">Tablet Pro 11"</h2>
                 <p class="product-price">R$ 2.299,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Tablet Pro 11', 2299.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
-                <img src="{% static 'img/Monitor.webp' %}" alt="Monitor 27\" 4K" class="product-image">
+                <img src="{% static 'img/Monitor.webp' %}" alt="Monitor 27\ 4K" class="product-image">
                 <h2 class="product-title">Monitor 27" 4K</h2>
                 <p class="product-price">R$ 1.199,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Monitor 27 4K', 1199.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Teclado.webp' %}" alt="Teclado Mecânico RGB" class="product-image">
                 <h2 class="product-title">Teclado Mecânico RGB</h2>
                 <p class="product-price">R$ 399,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Teclado Mecânico RGB', 399.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Mouse.jpg' %}" alt="Mouse Gamer" class="product-image">
                 <h2 class="product-title">Mouse Gamer</h2>
                 <p class="product-price">R$ 199,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Mouse Gamer', 199.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Camera.webp' %}" alt="Câmera Digital 20MP" class="product-image">
                 <h2 class="product-title">Câmera Digital 20MP</h2>
                 <p class="product-price">R$ 1.499,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Câmera Digital 20MP', 1499.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/Drones.avif' %}" alt="Drones HD" class="product-image">
                 <h2 class="product-title">Drones HD</h2>
                 <p class="product-price">R$ 2.999,00</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <button class="button" onclick="adicionarAoCarrinho('Drones HD', 2999.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/CaixaDeSom.webp' %}" alt="Caixa de Som Bluetooth" class="product-image">
                 <h2 class="product-title">Caixa de Som Bluetooth</h2>
-                <p class="product-price">R$ 299,</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <p class="product-price">R$ 299,00</p>
+                <button class="button" onclick="adicionarAoCarrinho('Caixa de Som Bluetooth', 299.00)">Adicionar ao Carrinho</button>
             </div>
             <div class="product-card">
                 <img src="{% static 'img/PcGame.avif' %}" alt="Computador Game" class="product-image">
                 <h2 class="product-title">Computador Game</h2>
-                <p class="product-price">R$ 299,</p>
-                <button class="button">Adicionar ao Carrinho</button>
+                <p class="product-price">R$ 299,00</p>
+                <button class="button" onclick="adicionarAoCarrinho('Computador Game', 299.00)">Adicionar ao Carrinho</button>
             </div>
+        </div>
+    </div>
+    
+    <script>
+        // Carrinho de Compras
+        let carrinho = [];
+        let total = 0;
+        
+        // Função para adicionar produtos ao carrinho
+        function adicionarAoCarrinho(nomeProduto, preco) {
+            carrinho.push({ nome: nomeProduto, preco: preco });
+            total += preco;
+            atualizarCarrinho();
+        }
+        
+        // Função para atualizar a lista de itens no carrinho
+        function atualizarCarrinho() {
+            const cartItemsList = document.getElementById('cart-items-list');
+            const totalValue = document.getElementById('total-value');
+            
+            // Limpa a lista atual de itens
+            cartItemsList.innerHTML = '';
+            
+            // Adiciona os itens ao carrinho
+            carrinho.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+                
+                // Criação do botão "Remover"
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.className = 'remove-button';
+                removeButton.onclick = () => removerDoCarrinho(index);
+                
+                // Adiciona o item e o botão "Remover" ao item do carrinho
+                listItem.appendChild(removeButton);
+                cartItemsList.appendChild(listItem);
+            });
+            
+            // Atualiza o valor total do carrinho
+            totalValue.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+        
+        // Função para remover um item do carrinho
+        function removerDoCarrinho(index) {
+            const itemRemovido = carrinho[index];
+            total -= itemRemovido.preco; // Subtrai o valor do item removido
+            carrinho.splice(index, 1); // Remove o item do array de carrinho
+            atualizarCarrinho(); // Atualiza o carrinho na interface
+        }
+        
+        // Função para abrir a página do carrinho
+        function openCartPage() {
+            document.getElementById('cart-page').style.display = 'block'; // Exibe o carrinho
+        }
+        
+        // Função para fechar a página do carrinho
+        function closeCartPage() {
+            document.getElementById('cart-page').style.display = 'none'; // Oculta o carrinho
+        }
+        
+        // Função para enviar a compra via WhatsApp
+        function enviarParaWhatsApp() {
+            const itens = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join('%0A');
+            const mensagem = `Olá, gostaria de comprar os seguintes produtos:%0A${itens}%0ATotal: R$ ${total.toFixed(2)}`;
+            const whatsappURL = `https://wa.me/81983454107?text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,24 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chats</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
     <link rel="stylesheet" href="{% static 'css/chats.css' %}">
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="{% url 'home' %}"class='nav-item'>Home</a>
+            <a href="{% url 'home' %}" class='nav-item'>Home</a>
             <a href="{% url 'lojas' %}" class="nav-item">Lojas</a>
             <a href="{% url 'logout' %}" class="nav-item logout">Logout</a>
         </div>
     </nav>
 
-    <div class="container">
-        <h1>Chats</h1>
-        <p>Converse com outras pessoas e faça novas amizades.</p>
+    <div class="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2>Chat em Tempo Real</h2>
+            </div>
+            <div id="messages" class="messages">
+                <!-- Mensagens aparecerão aqui -->
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Digite uma mensagem..." onkeyup="checkEnter(event)">
+                <button onclick="sendMessage()" class="send-button">Enviar</button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "SUA_API_KEY",
+            authDomain: "seu-dominio.firebaseapp.com",
+            databaseURL: "https://seu-database.firebaseio.com",
+            projectId: "seu-project-id",
+            storageBucket: "seu-storage.appspot.com",
+            messagingSenderId: "seu-sender-id",
+            appId: "seu-app-id"
+        };
+
+        // Inicializar o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        let messagesContainer = document.getElementById('messages');
+        let messageInput = document.getElementById('message-input');
+
+        // Função para enviar a mensagem ao Firebase
+        function sendMessage() {
+            const messageText = messageInput.value.trim();
+            if (messageText) {
+                // Envia para o Firebase
+                database.ref('messages').push().set({
+                    text: messageText,
+                    timestamp: Date.now()
+                });
+
+                messageInput.value = ''; // Limpa o campo de entrada
+            }
+        }
+
+        // Função para enviar a mensagem ao pressionar Enter
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Função para exibir as mensagens em tempo real
+        database.ref('messages').on('child_added', function(snapshot) {
+            const messageData = snapshot.val();
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'received');
+            messageElement.textContent = messageData.text;
+            messagesContainer.appendChild(messageElement);
+
+            // Faz o scroll para a última mensagem
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        });
+    </script>
 </body>
 </html>
